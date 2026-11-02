@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/library.css">
+  <title>文献库 · Paper Reader</title>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">R</div>
+    <span class="brand">Paper Reader</span>
+    <span class="brand-divider" aria-hidden="true"></span>
+    <span class="brand-section">文献库</span>
+    <span class="local-label"><span></span>本地文献库</span>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" aria-label="文献分组">
+      <div class="sidebar-intro">
+        <span class="eyebrow">YOUR LIBRARY</span>
+        <h2>文献库</h2>
+      </div>
+      <nav id="navigation" aria-label="文件夹"></nav>
+      <div class="folder-heading">
+        <span>文件夹</span>
+        <button class="icon-button add-folder" id="add-folder" type="button" aria-label="新建文件夹" title="新建文件夹">+</button>
+      </div>
+      <div id="folders" class="folder-list"></div>
+      <p class="sidebar-note">文件夹仅用于整理索引<br>不会移动原始文献</p>
+    </aside>
+
+    <main class="content">
+      <div class="content-heading">
+        <div>
+          <span class="eyebrow">PAPER COLLECTION</span>
+          <h1 id="view-title">全部文献</h1>
+          <p id="paper-count" class="paper-count">正在读取文献…</p>
+        </div>
+      </div>
+      <div id="message" class="message" role="status" aria-live="polite"></div>
+      <div id="paper-grid" class="paper-grid"></div>
+      <div id="empty-state" class="empty-state" hidden></div>
+    </main>
+  </div>
+
+  <dialog id="folder-dialog" class="folder-dialog">
+    <form id="folder-form">
+      <div class="dialog-top">
+        <div><span class="eyebrow">FOLDER</span><h2 id="dialog-title">新建文件夹</h2></div>
+        <button class="icon-button close-dialog" type="button" aria-label="关闭">×</button>
+      </div>
+      <label for="folder-name">文件夹名称</label>
+      <input id="folder-name" name="name" maxlength="80" autocomplete="off" required placeholder="例如：机器人抓取">
+      <p id="dialog-error" class="dialog-error" role="alert"></p>
+      <div class="dialog-actions">
+        <button class="button secondary close-dialog" type="button">取消</button>
+        <button class="button primary" type="submit">保存</button>
+      </div>
+    </form>
+  </dialog>
+  <script src="/library.js"></script>
+</body>
+</html>

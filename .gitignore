@@ -1,0 +1,10 @@
+.venv/
+.playwright-cli/
+/papers/*
+!/papers/.gitkeep
+/library_data/
+/work/
+__pycache__/
+*.pyc
+*.pdf
+*.zip
